@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+*{
+  margin:0;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #f5f6fa;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom: 20px;
 }
+.app__left{
+  flex: 0.9;
+}
+.app__stats{
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  display:flex;
+  justify-content:space-between;
+}
+ .app__right{
+   display:flex;
+   flex-direction:column;
+ }
+.app__header>h1{
+color: #fc3c3c;
+font-size:2rem;
+}
+.app__graph{
+  flex-grow: 1;
+}
+.app__right .muiCardContent-root{
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-grow: 1;
+}
+.app{
+  display:flex;
+  justify-content:space-evenly;
+  padding:20px;
+}
+@media(max-width:990px){
+  .app{
+    flex-direction: column;
+  }
+}
+/* table wala baap ayyaa  */
+.table{
+  margin-top: 20px;
+  overflow: scroll;
+  height: 400px;
+  color: #6a5d5d;
+
+}
+.table tr:nth-of-type(odd){
+  background-color: #f3f2f8;
+}
+.table tr{
+  display:flex;
+  justify-content:space-between;
+}
+.table td{
+padding:0.5rem
+}
+/* map wala section aaya baaba  */
+.map{
+  height: 500px;
+background-color: white;
+padding:1rem;
+border-radius: 20px;
+margin-top: 16px;
+box-shadow: 0 0 8px rgba(0, 0, 0,0.5);
+}
+.map .leaflet-container{
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.info-flag img{
+width:100px;
+border-radius:5px;
 }
+.info-flag{
+  height: 80px;
+  width:100%;
+  border-radius:8px;
+  background-size:cover;
+}
+.info-container{
+  width:150px;
+}
+.info-name{
+  font-size:20px;
+  font-weight: bolder;
+  color:#555;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.info-cofirmed,.info-recovered,.info-deaths{
+  font-size: 16px;
+  margin-top: 5px;
+}
+/* map ka sayappa khatam  */
+/* info box styling is here bhai  */
+.infoBox{
+  flex:1;
+  cursor: pointer;
+
+}
+.infoBox:not(:last-child){
+  margin-right: 20px;
+
+}
+.infoBox__cases{
+  color: #cc1034;
+  font-weight:600;
+  font-size: 1.75rem;
+  margin-bottom:0.5rem;
+
+}
+.infoBox__total{
+  color: #6c757d;
+  font-weight: 700 !important; 
+  font-size:0.8rem;
+  margin-top:20px;
+}
+.infoBox--selected{
+  border-top: 10px solid greenyellow;
+}
+.infoBox--red{
+  border-color: red;
+}
+.infoBox__cases--green{
+  color:lightgreen !important; 
 }
